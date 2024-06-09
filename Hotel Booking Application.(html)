@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Hotel Booking Application.css" />
+    <title>Hotel Booking Application</title>
+  </head>
+
+ <body>
+   <div class="container">
+    <img src="Hotel Booking Application.jpg" alt="Hotel Booking Application" width="800px" height="350px" class="logo">
+   </div>
+  
+    <form style="margin-top: -100px;"
+     <!--  General -->
+  
+
+      <div class="form-group">
+       <h2 class="heading">Hotel Booking Application</h2>
+       <div class="controls">
+
+        <input type="text" placeholder="First Name"  name="first name"/>
+        <input type="text" placeholder="Last Name"  name="lastname"/>
+        <input type="text" placeholder="Email" name= "email"/>
+        
+        <div style="display: flex;">
+          <select id="countryCode" style="width: 300px; margin-right: 20px;">
+            <option value="state key">State Key</option>
+            <option value="+970">(+970) Palestine</option>
+            <option value="+962">(+962) Jordan</option>
+            <option value="+965">(+965) Kuwait</option>
+            <option value="+974">(+974) Qatar</option>
+            <option value="+968">(+968) Oman</option>
+            <option value="+966">(+966) Saudi Arabia</option>
+            <option value="+213">(+213) Algeria</option>
+            <option value="+216">(+216) Tunisia</option>
+            <option value="+218">(+218) Libya</option>
+            <option value="+850">(+850) North Korea</option>
+            <option value="+98">(+98)   Iran</option>
+            <option value="+56">(+56)   Chile</option>
+            <option value="+55">(+55)   Brazil</option>
+            <option value="+60">(+60)   Malaysia</option>
+            <option value="+218">(+7)   Russia</option>
+            <input type="text" id="phoneNumber" placeholder="Phone Number" style="width: 1000px;" >
+          </select>
+        </div>
+
+        <form method=post>Gender: <br>
+          <input type="radio" name="option"> Male
+          <input type="radio" name="option"> Female
+          <br>
+          <br> 
+          <input
+          placeholder="Date Of Birth"
+          class="textbox-n"
+          type="text"
+          onfocus="(this.type='date')"
+          onblur="(this.type='text')"
+          id="Date Of Birth" />
+          <input type="text" placeholder="Address" name= "Address"/>
+          <input type="text" placeholder="City" name= "citye"/>
+          <input type="text" placeholder="Country" name= "country"/>
+          <input type="text" placeholder="Nationality" name="nationality"/>
+
+       </div>
+      </div>
+    </form>
+
+    <form style="margin-top: -250px;">
+     <div class="form-group">
+      <h2 class="heading">Details</h2>
+      <div class="controls">
+            
+      <input
+      placeholder="Arrive"
+      class="textbox-n"
+      type="text"
+      onfocus="(this.type='date')"
+      onblur="(this.type='text')"
+      id="Arrive" />
+       
+      <input
+      placeholder="Depart"
+      class="textbox-n"
+      type="text"
+      onfocus="(this.type='date')"
+      onblur="(this.type='text')"
+      id="Depart" />
+     </div>
+
+     <div class="grid">
+      <div class="col-1-3 col-1-3-sm">
+        <div class="controls">
+          <i class="fa fa-sort"></i>
+      <select class="floatLabel">
+        <option value="blank"></option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+      <div>
+      <label for="people" class="label-date"><i class="fa fa-calendar"></i>&nbsp;&nbsp; People</label>
+      </div>
+
+    </div>      
+  </div>
+
+  <div class="col-1-3 col-1-3-sm">
+  <div class="controls">
+    <i class="fa fa-sort"></i>
+    <select class="floatLabel">
+      <option value="blank"></option>
+      <option value="deluxe">With Bathroom</option>
+      <option value="Zuri-zimmer">Without Bathroom</option>
+    </select>
+    <label for="fruit"> Room</label>
+   </div>     
+  </div>
+
+  <div class="col-1-3 col-1-3-sm">
+  <div class="controls">
+    <i class="fa fa-sort"></i>
+    <select class="floatLabel">
+      <option value="blank"></option>
+      <option value="single-bed">Twin bads</option>
+      <option value="double-bed">Double bad</option>
+    </select>
+    <label for="fruit"> Bedding</label>
+   </div>     
+  </div>
+  </div>
+ 
+    <div class="grid">
+      <p class="info-text"></p>
+      <br>
+      <div class="controls">
+        <textarea  name="comments"  class="floatLabel" id="comments"></textarea>
+        <label  for="comments"/> Comments </label>
+      </div>
+    </div>  
+
+    
+  <form>
+
+    <div class="form-group">
+     <h2 class="heading">Payment Information</h2>
+     <div class="controls">
+       
+       <form method=post>Card Type: <br>
+        <input type="radio" name="option"> PayPal
+        <input type="radio" name="option"> Bank Transfer
+        <input type="radio" name="option"> Cash
+        <input type="radio" name="option"> Other
+        <br>
+        <br>
+     
+      <div id="credit_card_fields" style="display: none;">
+       <label for="card_number">Card Number:</label>
+       <input type="number" id="card_number" name="card_number" required>
+      </div>
+     
+      <script>
+       var payment_method_select = document.getElementById("payment_method");
+       var credit_card_fields = document.getElementById("credit_card_fields");
+     
+       payment_method_select.addEventListener("change", function() {
+         if (this.value === "credit_card") {
+           credit_card_fields.style.display = "block";
+         } else {
+           credit_card_fields.style.display = "none";
+         }
+       });
+      </script>
+        
+        <input
+        placeholder="Expiration"
+        class="textbox-n"
+        type="text"
+        onfocus="(this.type='date')"
+        onblur="(this.type='text')"
+        id="date" />
+
+         <input type="text" placeholder="Card Number"  name="card number"/>
+         <input type="text" placeholder="CVV" name= "CVV"/>
+         <input type="checkbox" name="option"> I agree to the terms and conditions
+         <br>
+         <br>
+         <button type="submit" value="Book now" class="col-1-7" style="color: white;">Book now</button>
+          
+      </div>   
+    </form>
+
+    <script src="Hotel Booking Application.js"></script>
+
+  </body>
+</html>
